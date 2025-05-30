@@ -1,166 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ModCtrl.ie - Small Panels, Smart Systems</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-    header img {
-      width: 160px;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
-    }
-    header h2 {
-      font-weight: bold;
-      margin: 0 0 20px;
-      font-size: 1.5em;
-    }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h3 {
-      border-bottom: 3px solid #000;
-      padding-bottom: 6px;
-      margin-bottom: 15px;
-      font-weight: bold;
-      color: #000;
-    }
-    p {
-      line-height: 1.6;
-      font-size: 1em;
-      color: #444;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      color: #444;
-    }
-    button {
-      background-color: #000;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-      display: inline-block;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: #444;
-    }
-    footer {
-      background-color: #000;
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-    footer p {
-      margin: 6px 0;
-      font-size: 0.9em;
-    }
-    footer a.email-link {
-      color: white;
-      text-decoration: none;
-    }
-    footer a.email-link:hover {
-      text-decoration: underline;
-    }
-    .linkedin-button {
-      background-color: white;
-      color: black;
-      padding: 8px 12px;
-      border-radius: 4px;
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-      margin-top: 10px;
-    }
-    .linkedin-button svg {
-      margin-right: 8px;
-    }
-  </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ModCtrl.ie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <img src="logo.png" alt="ModCtrl Logo" />
-    <h2>Small Panels, Smart Systems</h2>
-    <button id="contactBtn">Contact Us</button>
+<body style="font-family: 'Inter', sans-serif;" class="bg-white text-gray-800">
+
+  <!-- Hero Section -->
+  <header class="text-center py-12 shadow-md" data-aos="fade-down">
+    <img src="logo.png" alt="ModCtrl Logo" class="mx-auto mb-4" style="width: 250px;">
+    <h1 class="text-2xl font-bold mb-2">Small Panels, Smart Systems</h1>
+    <p class="text-gray-600 max-w-xl mx-auto">Independent control panel specialists from Donegal, delivering modular systems that simplify monitoring, energy control, and protocol integration.</p>
+    <a href="mailto:sean@modctrl.ie" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Contact Us</a>
   </header>
 
-  <main>
-    <section id="about">
-      <h3>About Us</h3>
-      <p>
-        ModCtrl.ie is an independent panel builder based in Donegal, specializing in small modular control systems.
-        We design, build, and support tailored control panels that integrate seamlessly into your projects,
-        offering flexible, reliable solutions for energy monitoring, automation, and more.
-        Our expertise lies in combining robust hardware with smart software solutions, including Modbus gateways and monitoring systems,
-        to empower businesses and institutions to manage their energy and controls efficiently.
-      </p>
-    </section>
-
-    <section id="services">
-      <h3>Services</h3>
-      <ul>
-        <li>Consultancy on hardware selection for custom control panels</li>
-        <li>Design and assembly of modular control panels for energy monitoring</li>
-        <li>Integration and support of Modbus devices and gateways</li>
-        <li>Pre-commissioning support and testing</li>
-        <li>Remote monitoring setup and troubleshooting</li>
-      </ul>
-    </section>
-
-    <section id="contact" style="padding-top: 40px;">
-      <h3>Contact Us</h3>
-      <p>Email: <a href="mailto:sean@modctrl.ie?subject=Enquiry" class="email-link">sean@modctrl.ie</a></p>
-      <p>Mobile: +353 85 1366 042</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 ModCtrl.ie</p>
-    <p>
-      <a href="mailto:sean@modctrl.ie?subject=Enquiry" class="email-link">sean@modctrl.ie</a>
+  <!-- About Us -->
+  <section class="px-6 py-12 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-4">About Us</h2>
+    <p class="text-gray-700 leading-relaxed text-lg">
+      ModCtrl.ie is an independent control panel consultancy based in Donegal. We design and support compact modular control systems for schools, offices, and energy-focused projects. Our services revolve around Modbus and BACnet integration, hardware consultancy, and practical support during the pre-commissioning phase. Our mission is to deliver sleek, efficient panels that just work — no fluff, no fuss.
     </p>
-    <p>M: +353 85 1366 042</p>
-    <div>
-      <a href="https://www.linkedin.com/company/modctrl" target="_blank" rel="noopener" class="linkedin-button" aria-label="ModCtrl LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.025-3.039-1.852-3.039-1.853 0-2.136 1.445-2.136 2.939v5.669H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.601 0 4.269 2.37 4.269 5.455v6.286zM5.337 7.433c-1.144 0-2.07-.927-2.07-2.07 0-1.144.926-2.07 2.07-2.07 1.144 0 2.07.926 2.07 2.07 0 1.143-.926 2.07-2.07 2.07zM6.914 20.452H3.76V9h3.154v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.73v20.538C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.269V1.73C24 .774 23.2 0 22.225 0z"/>
-        </svg>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-10">Services</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Hardware Consulting</h3>
+          <p class="text-gray-600">Get help choosing the right components, panel layouts, and power supplies for your application.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Modbus & Gateway Support</h3>
+          <p class="text-gray-600">From Modbus RTU to TCP/IP, we support protocol conversion and clean integration setups.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Pre-Commissioning Advice</h3>
+          <p class="text-gray-600">Get ahead of site visits by testing your panels and logic in controlled environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4">What Makes Us Different</h2>
+    <ul class="list-none space-y-2 text-gray-700">
+      <li>✅ No corporate fluff — just real technical support</li>
+      <li>✅ Modular builds to reduce cost and increase flexibility</li>
+      <li>✅ Remote-first support when you need it most</li>
+      <li>✅ Donegal-based, Europe-wide delivery</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-center mb-6">Testimonials</h2>
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <blockquote class="italic text-gray-600">"ModCtrl helped us simplify our entire monitoring setup. Sean's support was quick and honest — just what we needed."</blockquote>
+      <blockquote class="italic text-gray-600">"The Modbus gateway config they recommended saved us days of setup. Highly recommended for lean teams."</blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <details class="bg-gray-100 p-4 rounded shadow-sm">
+        <summary class="cursor-pointer font-semibold">Do you build panels or just consult?</summary>
+        <p class="mt-2 text-gray-700">We do both — depending on project size and timeline. Our specialty is smart, compact builds.</p>
+      </details>
+      <details class="bg-gray-100 p-4 rounded shadow-sm">
+        <summary class="cursor-pointer font-semibold">Can you help with Modbus testing?</summary>
+        <p class="mt-2 text-gray-700">Yes. We can simulate, configure, and test Modbus or BACnet communication for your setup.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-600 py-10 border-t mt-12">
+    <p>© 2025 ModCtrl.ie · <a href="mailto:sean@modctrl.ie" class="text-blue-600 hover:underline">sean@modctrl.ie</a></p>
+    <div class="mt-2">
+      <a href="https://www.linkedin.com/company/modctrl" target="_blank" class="inline-block mx-2 text-blue-700 hover:underline">
         LinkedIn
       </a>
     </div>
+    <a href="#" class="block mt-4 text-xs text-gray-500 hover:underline">Back to top ↑</a>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Scroll smoothly to contact section when Contact Us button is clicked
-    document.getElementById('contactBtn').addEventListener('click', function () {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    });
+    AOS.init();
   </script>
 </body>
 </html>
