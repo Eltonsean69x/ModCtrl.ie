@@ -1,132 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ModCtrl</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: white;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-
-    header img {
-      max-width: 120px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 30px 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      padding-bottom: 5px;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav a:hover {
-      border-color: #0073e6;
-    }
-
-    section {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #eee;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      color: #333;
-      font-size: 20px;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: #0073e6;
-    }
-  </style>
+  <title>ModCtrl.ie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <img src="logo.png" alt="ModCtrl Logo">
-    <h1>Small Panels, Smart Systems</h1>
+<body style="font-family: 'Inter', sans-serif;" class="bg-white text-gray-800">
+
+  <!-- Hero Section -->
+  <header class="text-center py-12 shadow-md" data-aos="fade-down">
+    <img src="logo.png" alt="ModCtrl Logo" class="mx-auto mb-4" style="width: 250px;">
+    <h1 class="text-2xl font-bold mb-2">Small Panels, Smart Systems</h1>
+    <p class="text-gray-600 max-w-xl mx-auto">Independent control panel specialists from Donegal, delivering modular systems that simplify monitoring, energy control, and protocol integration.</p>
+    <a href="mailto:sean@modctrl.ie" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Contact Us</a>
   </header>
 
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      ModCtrl is an independent control panel building service based in Donegal, Ireland. 
-      We specialise in the design and support of small modular systems for energy monitoring, automation, and data integration. 
-      Focused on simplicity and reliability, we help businesses adopt the right hardware and protocols — whether it’s Modbus, BACnet, or custom gateways — without vendor lock-in. 
-      Our goal is to empower engineers and building managers with smarter, easier-to-integrate control solutions.
+  <!-- About Us -->
+  <section class="px-6 py-12 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-4">About Us</h2>
+    <p class="text-gray-700 leading-relaxed text-lg">
+      ModCtrl.ie is an independent control panel consultancy based in Donegal. We design and support compact modular control systems for schools, offices, and energy-focused projects. Our services revolve around Modbus and BACnet integration, hardware consultancy, and practical support during the pre-commissioning phase. Our mission is to deliver sleek, efficient panels that just work — no fluff, no fuss.
     </p>
   </section>
 
-  <section id="services">
-    <h2>Services</h2>
-    <p>
-      • Hardware selection and consulting for control panels<br>
-      • Modbus, BACnet, and gateway configuration support<br>
-      • Pre-commissioning assistance and diagnostics<br>
-      • Integration with third-party monitoring platforms<br>
-      • Technical documentation and wiring diagrams<br>
-      • Ongoing support for scalable modular systems
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sean@modctrl.ie">sean@modctrl.ie</a></p>
-  </section>
-
-  <footer>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/company/modctrl" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <!-- Services -->
+  <section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-10">Services</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Hardware Consulting</h3>
+          <p class="text-gray-600">Get help choosing the right components, panel layouts, and power supplies for your application.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Modbus & Gateway Support</h3>
+          <p class="text-gray-600">From Modbus RTU to TCP/IP, we support protocol conversion and clean integration setups.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Pre-Commissioning Advice</h3>
+          <p class="text-gray-600">Get ahead of site visits by testing your panels and logic in controlled environments.</p>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2025 ModCtrl</p>
+  </section>
+
+  <!-- Features -->
+  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4">What Makes Us Different</h2>
+    <ul class="list-none space-y-2 text-gray-700">
+      <li>✅ No corporate fluff — just real technical support</li>
+      <li>✅ Modular builds to reduce cost and increase flexibility</li>
+      <li>✅ Remote-first support when you need it most</li>
+      <li>✅ Donegal-based, Europe-wide delivery</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-center mb-6">Testimonials</h2>
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <blockquote class="italic text-gray-600">"ModCtrl helped us simplify our entire monitoring setup. Sean's support was quick and honest — just what we needed."</blockquote>
+      <blockquote class="italic text-gray-600">"The Modbus gateway config they recommended saved us days of setup. Highly recommended for lean teams."</blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <details class="bg-gray-100 p-4 rounded shadow-sm">
+        <summary class="cursor-pointer font-semibold">Do you build panels or just consult?</summary>
+        <p class="mt-2 text-gray-700">We do both — depending on project size and timeline. Our specialty is smart, compact builds.</p>
+      </details>
+      <details class="bg-gray-100 p-4 rounded shadow-sm">
+        <summary class="cursor-pointer font-semibold">Can you help with Modbus testing?</summary>
+        <p class="mt-2 text-gray-700">Yes. We can simulate, configure, and test Modbus or BACnet communication for your setup.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-600 py-10 border-t mt-12">
+    <p>© 2025 ModCtrl.ie · <a href="mailto:sean@modctrl.ie" class="text-blue-600 hover:underline">sean@modctrl.ie</a></p>
+    <div class="mt-2">
+      <a href="https://www.linkedin.com/company/modctrl" target="_blank" class="inline-block mx-2 text-blue-700 hover:underline">
+        LinkedIn
+      </a>
+    </div>
+    <a href="#" class="block mt-4 text-xs text-gray-500 hover:underline">Back to top ↑</a>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
