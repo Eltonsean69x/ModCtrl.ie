@@ -1,61 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ModCtrl</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ModCtrl.ie - Monitoring & Control Solutions</title>
   <style>
+    /* Reset & base */
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: white;
+      color: #222222;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
+    a {
+      color: #222222;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0077b5; /* LinkedIn blue for hover */
+    }
+
     header {
       text-align: center;
+      margin-bottom: 40px;
     }
+
     img.logo {
       max-width: 200px;
+      margin-bottom: 10px;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
+
+    h1 {
+      margin-bottom: 0;
     }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: #0077b5; /* LinkedIn blue */
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #005983;
+    }
+
+    /* Sections */
     section {
-      margin-top: 2rem;
+      margin-bottom: 50px;
+    }
+
+    /* Social icons container */
+    #social {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    #social a {
+      margin: 0 15px;
+      color: #222222;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+    #social a:hover {
+      color: #0077b5;
+    }
+    #social svg {
+      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+      fill: currentColor;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 60px;
+      padding-bottom: 10px;
+      border-top: 1px solid #eee;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      img.logo {
+        max-width: 150px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img class="logo" src="logo.png" alt="ModCtrl Logo">
-    <h1>ModCtrl</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>ModCtrl offers expert support for Modbus systems, gateways, and remote monitoring. We help companies choose the right hardware and simplify integration.</p>
-  </section>
+<header>
+  <img src="logo.png" alt="ModCtrl Logo" class="logo" />
+  <h1>ModCtrl.ie</h1>
+  <p>Monitoring & Control Solutions</p>
+  <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="btn" rel="noopener noreferrer">Visit our LinkedIn</a>
+</header>
 
-  <section id="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Modbus & Gateway Support</li>
-      <li>Monitoring Solutions</li>
-      <li>Pre-Commissioning Advice</li>
-    </ul>
-  </section>
+<section id="about">
+  <h2>About Us</h2>
+  <p>ModCtrl specializes in delivering smart, tailored monitoring and control solutions. We focus on integrating Modbus gateways, energy monitoring, and data insights to optimize building management systems.</p>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:info@modctrl.ie">info@modctrl.ie</a></p>
-    <p><a href="https://www.linkedin.com/company/modctrl" target="_blank">LinkedIn</a></p>
-  </section>
+<section id="services">
+  <h2>Services</h2>
+  <ul>
+    <li>Consultancy for hardware and system design</li>
+    <li>Modbus gateway integration and troubleshooting</li>
+    <li>Pre-commissioning and support for control panels</li>
+    <li>Remote monitoring and data analytics setup</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>For enquiries, please email: <a href="mailto:sean@modctrl.ie">sean@modctrl.ie</a></p>
+</section>
+
+<!-- Social Icons -->
+<section id="social" aria-label="Social media links">
+  <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.24h.07c.67-1.27 2.3-2.6 4.72-2.6 5.05 0 6 3.32 6 7.64V24H17v-7.33c0-1.74-.03-4-2.43-4-2.43 0-2.8 1.9-2.8 3.87V24H7.5V8z"/>
+    </svg>
+  </a>
+  <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M24 4.557a9.88 9.88 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.918 4.918 0 00-8.373 4.482A13.945 13.945 0 011.67 3.149 4.917 4.917 0 003.195 9.723 4.9 4.9 0 012 9.367v.061a4.918 4.918 0 003.946 4.816 4.9 4.9 0 01-2.212.084 4.922 4.922 0 004.6 3.417 9.86 9.86 0 01-6.102 2.104c-.397 0-.79-.023-1.177-.069a13.945 13.945 0 007.548 2.212c9.057 0 14.01-7.508 14.01-14.01 0-.213-.004-.425-.015-.636A10.012 10.012 0 0024 4.557z"/>
+    </svg>
+  </a>
+  <a href="mailto:sean@modctrl.ie" aria-label="Email">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+  </a>
+</section>
+
+<footer>
+  &copy; 2025 ModCtrl.ie - All rights reserved
+</footer>
+
 </body>
 </html>
