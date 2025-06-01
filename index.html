@@ -1,104 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testimonials</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Optional: Hide scrollbar on all browsers
-      tailwind.config = {
-        theme: {
-          extend: {},
-        },
-        corePlugins: {
-          preflight: true,
-        },
-        variants: {
-          extend: {},
-        },
-        plugins: [],
-      };
-    </script>
-    <style>
-      /* Hide scrollbar (optional aesthetic choice) */
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
-  </head>
-  <body class="bg-white text-black dark:bg-gray-950 dark:text-white">
-    <section class="py-12 md:py-24 lg:py-32">
-      <div class="container px-4 md:px-6 mx-auto">
-        <div class="flex items-center justify-between mb-6">
-          <h2 class="text-3xl font-bold tracking-tight">What Our Clients Say</h2>
-          <div class="flex gap-2">
-            <button
-              onclick="scrollTestimonials('left')"
-              class="rounded-full border p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              &#8592;
-            </button>
-            <button
-              onclick="scrollTestimonials('right')"
-              class="rounded-full border p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              &#8594;
-            </button>
-          </div>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ModCtrl.ie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body style="font-family: 'Inter', sans-serif;" class="bg-white text-gray-800">
+
+  <!-- Hero Section -->
+  <header class="text-center py-12 shadow-md" data-aos="fade-down">
+    <img src="logo.png" alt="ModCtrl Logo" class="mx-auto mb-4" style="width: 250px;">
+    <h1 class="text-2xl font-bold mb-2">Small Panels, Smart Systems</h1>
+    <p class="text-gray-600 max-w-xl mx-auto">Independent control panel specialists from Donegal, delivering modular systems that simplify monitoring, energy control, and protocol integration.</p>
+  </header>
+
+  <!-- About Us -->
+  <section class="px-6 py-12 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-4">About Us</h2>
+    <p class="text-gray-700 leading-relaxed text-lg">
+      ModCtrl.ie is an independent control panel consultancy based in Donegal. We design and support compact modular control systems for schools, offices, and energy-focused projects. Our services revolve around Modbus and BACnet integration, hardware consultancy, and practical support during the pre-commissioning phase. Our mission is to deliver sleek, efficient panels that just work — no fluff, no fuss.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-10">Services</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Hardware Consulting</h3>
+          <p class="text-gray-600">Get help choosing the right components, panel layouts, and power supplies for your application.</p>
         </div>
-
-        <div
-          id="testimonial-carousel"
-          class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide pb-4"
-        >
-          <!-- Testimonial 1 -->
-          <div class="min-w-[300px] flex-shrink-0 md:min-w-[400px] lg:min-w-[500px] border rounded-lg p-6">
-            <blockquote class="text-lg font-semibold leading-snug lg:text-xl lg:leading-relaxed">
-              “This company transformed our operations. The results speak for themselves.”
-            </blockquote>
-            <div class="mt-4 font-semibold">Alex Johnson</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">CEO, TechCorp</div>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="min-w-[300px] flex-shrink-0 md:min-w-[400px] lg:min-w-[500px] border rounded-lg p-6">
-            <blockquote class="text-lg font-semibold leading-snug lg:text-xl lg:leading-relaxed">
-              “Incredible team and top-notch results. Highly recommended!”
-            </blockquote>
-            <div class="mt-4 font-semibold">Maria Rodriguez</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">
-              Marketing Director, Creatives Inc.
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="min-w-[300px] flex-shrink-0 md:min-w-[400px] lg:min-w-[500px] border rounded-lg p-6">
-            <blockquote class="text-lg font-semibold leading-snug lg:text-xl lg:leading-relaxed">
-              “Professional, efficient, and reliable. A pleasure to work with.”
-            </blockquote>
-            <div class="mt-4 font-semibold">James Smith</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">COO, Business Solutions</div>
-          </div>
-
-          <!-- Add more testimonials here -->
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Modbus & Gateway Support</h3>
+          <p class="text-gray-600">From Modbus RTU to TCP/IP, we support protocol conversion and clean integration setups.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Pre-Commissioning Advice</h3>
+          <p class="text-gray-600">Get ahead of site visits by testing your panels and logic in controlled environments.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <script>
-      function scrollTestimonials(direction) {
-        const container = document.getElementById("testimonial-carousel");
-        const scrollAmount = container.clientWidth;
-        container.scrollBy({
-          left: direction === "left" ? -scrollAmount : scrollAmount,
-          behavior: "smooth",
-        });
-      }
-    </script>
-  </body>
+  <!-- Features -->
+  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4">What Makes Us Different</h2>
+    <ul class="list-none space-y-2 text-gray-700">
+      <li>✅ No corporate fluff — just real technical support</li>
+      <li>✅ Modular builds to reduce cost and increase flexibility</li>
+      <li>✅ Remote-first support when you need it most</li>
+      <li>✅ Donegal-based, Europe-wide delivery</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-center mb-6">Testimonials</h2>
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <blockquote class="italic text-gray-600">"ModCtrl helped us simplify our entire monitoring setup. Sean's support was quick and honest — just what we needed."</blockquote>
+      <blockquote class="italic text-gray-600">"The Modbus gateway config they recommended saved us days of setup. Highly recommended for lean teams."</blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <details class="bg-gray-100 p-4 rounded shadow-sm">
+        <summary class="cursor-pointer font-semibold">Do you build panels or just consult?</summary>
+        <p class="mt-2 text-gray-700">We do both — depending on project size and timeline. Our specialty is smart, compact builds.</p>
+      </details>
+      <details class="bg-gray-100 p-4 rounded shadow-sm">
+        <summary class="cursor-pointer font-semibold">Can you help with Modbus testing?</summary>
+        <p class="mt-2 text-gray-700">Yes. We can simulate, configure, and test Modbus or BACnet communication for your setup.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-600 py-10 border-t mt-12 max-w-4xl mx-auto">
+    <div class="flex justify-center items-center space-x-8 mb-4">
+      <!-- LinkedIn Button -->
+      <a href="https://www.linkedin.com/company/modctrl" target="_blank" aria-label="LinkedIn" class="inline-flex items-center justify-center bg-black text-white rounded-full w-10 h-10 hover:bg-gray-800 transition" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.8-.81-1.8-1.8 0-1 .81-1.8 1.8-1.8s1.8.81 1.8 1.8c0 1-.81 1.8-1.8 1.8zm13.5 11.3h-3v-5.5c0-1.3-1-1.5-1-1.5-.6 0-1 .4-1 1.5v5.5h-3v-10h3v1.5c.4-.6 1.3-1.5 2.5-1.5 2 0 3 1.4 3 4.5v5.5z"/>
+        </svg>
+      </a>
+
+      <!-- Email -->
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-gray-700" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 4h16v16H4z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <a href="mailto:sean@modctrl.ie" class="hover:underline">sean@modctrl.ie</a>
+      </div>
+
+      <!-- Mobile -->
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-gray-700" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="6" y="2" width="12" height="20" rx="2" ry="2"/>
+          <line x1="12" y1="18" x2="12" y2="18"/>
+        </svg>
+        <span>+353 85 1366 042</span>
+      </div>
+    </div>
+
+    <a href="#" class="block mt-4 text-xs text-gray-400 select-none">© 2025 ModCtrl.ie</a>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
 </html>
