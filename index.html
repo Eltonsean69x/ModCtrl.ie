@@ -6,16 +6,15 @@
   <title>ModCtrl.ie</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <body style="font-family: 'Inter', sans-serif;" class="bg-white text-gray-800">
 
   <!-- Hero Section -->
   <header class="text-center py-12 shadow-md" data-aos="fade-down">
     <img src="logo.png" alt="ModCtrl Logo" class="mx-auto mb-4" style="width: 250px;">
-    <h1 class="text-2xl font-bold mb-2">
-      <span id="typed" class="text-gray-900"></span>
-    </h1>
+    <h1 class="text-2xl font-bold mb-2">Small Panels, Smart Systems</h1>
     <p class="text-gray-600 max-w-xl mx-auto">Independent control panel specialists from Donegal, delivering modular systems that simplify monitoring, energy control, and protocol integration.</p>
   </header>
 
@@ -57,6 +56,23 @@
       <li>✅ Remote-first support when you need it most</li>
       <li>✅ Donegal-based, Europe-wide delivery</li>
     </ul>
+  </section>
+
+  <!-- Visual Carousel -->
+  <section class="py-12 bg-white px-6" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-semibold text-center mb-8">Visuals from Industry</h2>
+      <div x-data="{ active: 0 }" x-init="setInterval(() => active = (active + 1) % 6, 3000)" class="overflow-hidden rounded-lg relative h-64">
+        <div class="whitespace-nowrap transition-all duration-1000 ease-in-out" :style="`transform: translateX(-${active * 100}%); width: 600%`">
+          <img src="https://images.unsplash.com/photo-1581090700227-1e8f44ef4939?auto=format&fit=crop&w=1600&q=80" class="inline-block w-full h-64 object-cover" alt="Industrial 1">
+          <img src="https://images.unsplash.com/photo-1581092160610-1c3d9fa118d6?auto=format&fit=crop&w=1600&q=80" class="inline-block w-full h-64 object-cover" alt="Industrial 2">
+          <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1600&q=80" class="inline-block w-full h-64 object-cover" alt="Industrial 3">
+          <img src="https://images.unsplash.com/photo-1581090700072-3b4d83ca2b5b?auto=format&fit=crop&w=1600&q=80" class="inline-block w-full h-64 object-cover" alt="Industrial 4">
+          <img src="https://images.unsplash.com/photo-1536305030014-4c12ec5e1c9e?auto=format&fit=crop&w=1600&q=80" class="inline-block w-full h-64 object-cover" alt="Industrial 5">
+          <img src="https://images.unsplash.com/photo-1593642634371-8b12e02d091c?auto=format&fit=crop&w=1600&q=80" class="inline-block w-full h-64 object-cover" alt="Industrial 6">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Testimonials -->
@@ -115,20 +131,8 @@
     <a href="#" class="block mt-4 text-xs text-gray-400 select-none">© 2025 ModCtrl.ie</a>
   </footer>
 
-  <!-- Animations & Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    var typed = new Typed('#typed', {
-      strings: ['Small Panels, Smart Systems', 'Donegal Based. Europe Ready.', 'Modbus and BACnet Experts.'],
-      typeSpeed: 60,
-      backSpeed: 35,
-      backDelay: 2000,
-      loop: true
-    });
+    AOS.init();
   </script>
 </body>
 </html>
