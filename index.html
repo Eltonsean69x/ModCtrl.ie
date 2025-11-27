@@ -75,193 +75,81 @@
   </div>
 </section>
 
-<section id="free-tools" style="padding: 3rem 1rem 4rem 1rem;">
-  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-    <h2>Free Tools</h2>
-    <p style="max-width: 640px; margin: 0.5rem auto 2rem auto;">
-      A small collection of tools I’m building to make power metering, PME work and
-      data centre engineering a bit easier.
-    </p>
-
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
-
+<!-- Free Tools -->
+<section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-10">Free Tools</h2>
+    <div class="grid md:grid-cols-4 gap-8 text-left">
+      
       <!-- Virtual Energy Meter -->
-      <div style="
-        flex: 1 1 260px;
-        max-width: 300px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem 1rem 1.5rem 1rem;
-        background: #ffffff;
-      ">
-        <h3 style="margin-top: 0; font-size: 1.1rem;">Virtual Energy Meter</h3>
-        <p style="font-size: 0.95rem;">
-          A virtual three-phase energy meter simulator that exposes Modbus TCP
-          registers and shows a live dashboard. Useful for testing drivers and
-          integrations without real hardware.
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Virtual Energy Meter</h3>
+        <p class="text-gray-600 mb-2">
+          A virtual three-phase energy meter simulator that exposes Modbus TCP registers
+          and shows a live dashboard. Useful for testing PME drivers, Modbus clients and
+          SCADA integrations without real hardware.
         </p>
-        <img
-          src="images/virtual_energymeter_gui.png"
-          alt="Virtual Energy Meter GUI"
-          style="max-width: 100%; height: auto; margin: 0.5rem 0 0.75rem 0; border: 1px solid #ccc; border-radius: 4px;"
-        />
-        <div>
+        <p class="text-sm">
           <a
             href="https://github.com/Eltonsean69x/virtual-energymeter/releases/latest/download/virtual_energymeter.exe"
-            style="
-              display: inline-block;
-              padding: 0.35rem 0.9rem;
-              margin: 0.25rem 0.15rem;
-              border-radius: 4px;
-              border: 1px solid #007bff;
-              text-decoration: none;
-              font-size: 0.9rem;
-            "
+            class="text-blue-600 underline"
           >
             Download .exe
           </a>
+          &nbsp;·&nbsp;
           <a
             href="https://github.com/Eltonsean69x/virtual-energymeter"
-            style="
-              display: inline-block;
-              padding: 0.35rem 0.9rem;
-              margin: 0.25rem 0.15rem;
-              border-radius: 4px;
-              border: 1px solid #666;
-              text-decoration: none;
-              font-size: 0.9rem;
-            "
+            class="text-blue-600 underline"
           >
             GitHub repo
           </a>
-        </div>
-      </div>
-
-      <!-- BMS Register Map Viewer -->
-      <div style="
-        flex: 1 1 260px;
-        max-width: 300px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem 1rem 1.5rem 1rem;
-        background: #ffffff;
-      ">
-        <h3 style="margin-top: 0; font-size: 1.1rem;">BMS Register Map Viewer</h3>
-        <p style="font-size: 0.95rem;">
-          A CSV-based register map viewer with filters and search to help
-          browse and sanity-check BMS and Modbus register maps.
         </p>
-        <img
-          src="images/bms_register_map_viewer.png"
-          alt="BMS Register Map Viewer GUI"
-          style="max-width: 100%; height: auto; margin: 0.5rem 0 0.75rem 0; border: 1px solid #ccc; border-radius: 4px;"
-        />
-        <div>
-          <a
-            href="https://github.com/Eltonsean69x/bms-register-map-viewer"
-            style="
-              display: inline-block;
-              padding: 0.35rem 0.9rem;
-              margin: 0.25rem 0.15rem;
-              border-radius: 4px;
-              border: 1px solid #666;
-              text-decoration: none;
-              font-size: 0.9rem;
-            "
-          >
-            GitHub repo
-          </a>
-        </div>
       </div>
 
       <!-- CT/VT & PME Scaling Calculator -->
-      <div style="
-        flex: 1 1 260px;
-        max-width: 300px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem 1rem 1.5rem 1rem;
-        background: #ffffff;
-      ">
-        <h3 style="margin-top: 0; font-size: 1.1rem;">CT/VT &amp; PME Scaling Calculator</h3>
-        <p style="font-size: 0.95rem;">
-          A desktop tool that helps calculate CT and VT ratios, understand PME
-          scaling chains, and generate configuration hints for CT/VT settings.
+      <div>
+        <h3 class="text-xl font-semibold mb-2">CT/VT &amp; PME Scaling Calculator</h3>
+        <p class="text-gray-600 mb-2">
+          A desktop tool to help calculate CT and VT ratios, understand PME-style scaling
+          chains and generate configuration hints for CT/VT settings during commissioning.
         </p>
-        <img
-          src="images/ct_vt_scaler.png"
-          alt="CT/VT & PME Scaling Calculator GUI"
-          style="max-width: 100%; height: auto; margin: 0.5rem 0 0.75rem 0; border: 1px solid #ccc; border-radius: 4px;"
-        />
-        <div>
-          <!-- When you publish a .exe release for ct_vt_scaler, you can add a Download link like the one above -->
+        <p class="text-sm">
           <a
             href="https://github.com/Eltonsean69x/ct_vt_scaler"
-            style="
-              display: inline-block;
-              padding: 0.35rem 0.9rem;
-              margin: 0.25rem 0.15rem;
-              border-radius: 4px;
-              border: 1px solid #666;
-              text-decoration: none;
-              font-size: 0.9rem;
-            "
+            class="text-blue-600 underline"
           >
             GitHub repo
           </a>
-        </div>
-      </div>
-
-      <!-- PME Driver Tester (planned) -->
-      <div style="
-        flex: 1 1 260px;
-        max-width: 300px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem 1rem 1.5rem 1rem;
-        background: #ffffff;
-      ">
-        <h3 style="margin-top: 0; font-size: 1.1rem;">PME Driver Tester (planned)</h3>
-        <p style="font-size: 0.95rem;">
-          Planned tool: an independent Modbus TCP tester that reads device
-          registers, applies scaling, and compares values against PME to quickly
-          diagnose driver and scaling issues.
+          <!-- When you publish a .exe release for ct_vt_scaler, you can add a Download link here -->
         </p>
-        <img
-          src="images/pme_driver_tester.png"
-          alt="PME Driver Tester concept"
-          style="max-width: 100%; height: auto; margin: 0.5rem 0 0.75rem 0; border: 1px solid #ccc; border-radius: 4px;"
-        />
       </div>
 
-      <!-- PME Log Analyzer (planned) -->
-      <div style="
-        flex: 1 1 260px;
-        max-width: 300px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem 1rem 1.5rem 1rem;
-        background: #ffffff;
-      ">
-        <h3 style="margin-top: 0; font-size: 1.1rem;">PME Log Analyzer (planned)</h3>
-        <p style="font-size: 0.95rem;">
-          Planned tool: a log analysis utility to parse PME logs, highlight
-          communication errors and driver issues, and summarise data quality.
+      <!-- BMS Register Map Viewer -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2">BMS Register Map Viewer</h3>
+        <p class="text-gray-600 mb-2">
+          A CSV-based register map viewer with filters and search to help browse and
+          sanity-check BMS and Modbus register maps without fighting huge spreadsheets.
         </p>
-        <img
-          src="images/pme_log_analyzer.png"
-          alt="PME Log Analyzer concept"
-          style="max-width: 100%; height: auto; margin: 0.5rem 0 0.75rem 0; border: 1px solid #ccc; border-radius: 4px;"
-        />
+        <p class="text-sm">
+          <a
+            href="https://github.com/Eltonsean69x/bms-register-map-viewer"
+            class="text-blue-600 underline"
+          >
+            GitHub repo
+          </a>
+        </p>
       </div>
 
-    </div>
-  </div>
-</section>
-
-    </div>
-  </div>
-</section>
+      <!-- Future PME Tools -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Future PME Tools</h3>
+        <p class="text-gray-600 mb-2">
+          Planned utilities such as a PME Driver Tester and PME Log Analyzer to help
+          debug Modbus scaling issues and quickly spot communication problems in PME logs.
+        </p>
+        <!-- Links can be added here once the repos are public -->
+      </div>
     </div>
   </div>
 </section>
@@ -347,6 +235,7 @@
   </script>
 </body>
 </html>
+
 
 
 
