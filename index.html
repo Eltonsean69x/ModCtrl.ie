@@ -75,127 +75,113 @@
   </div>
 </section>
 
-<!-- Free Tools (ModCtrl Engineering Utilities) -->
-<section id="tools" class="py-12 px-6 bg-white" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-6">Free Engineering Tools</h2>
-    <p class="text-gray-600 mb-10 max-w-2xl mx-auto">
-      A collection of free, open-source tools developed by ModCtrl to support metering,
-      Modbus integration, PME analysis, and control system workflows.
-      Updated regularly — no ads, no tracking.
-    </p>
+<h2>Free Tools</h2>
 
-    <div class="grid md:grid-cols-3 gap-6 text-left">
-
-      <!-- PME Log Analyzer -->
-      <div class="bg-gray-100 p-6 rounded shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">PME Log Analyzer</h3>
-        <p class="text-gray-600 text-sm mb-4">
-          Analyze PME logs for timeouts, Modbus errors, offline/online events,
-          and driver issues. Filter, summarize, and export to CSV.
-        </p>
-        <div class="space-y-1">
-          <a href="https://github.com/Eltonsean69x/pme-log-analyzer/releases"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm font-medium">
-            Download (EXE)
-          </a><br>
-          <a href="https://github.com/Eltonsean69x/pme-log-analyzer"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm">
-            Source on GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- PME Driver Tester -->
-      <div class="bg-gray-100 p-6 rounded shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">PME Driver Tester</h3>
-        <p class="text-gray-600 text-sm mb-4">
-          Lightweight test harness for Modbus register reads/writes, driver
-          communication validation, and bench testing.
-        </p>
-        <div class="space-y-1">
-          <a href="https://github.com/Eltonsean69x/pme_driver_tester/releases"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm font-medium">
-            Download (EXE)
-          </a><br>
-          <a href="https://github.com/Eltonsean69x/pme_driver_tester"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm">
-            Source on GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- BMS Register Map Viewer -->
-      <div class="bg-gray-100 p-6 rounded shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">BMS Register Map Viewer</h3>
-        <p class="text-gray-600 text-sm mb-4">
-          Load and browse register maps for Modbus/BMS devices. Filter by address,
-          description, or function code. Export cleaned views.
-        </p>
-        <div class="space-y-1">
-          <a href="https://github.com/Eltonsean69x/bms-register-map-viewer/releases"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm font-medium">
-            Download (EXE)
-          </a><br>
-          <a href="https://github.com/Eltonsean69x/bms-register-map-viewer"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm">
-            Source on GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- CT/VT Scaler -->
-      <div class="bg-gray-100 p-6 rounded shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">CT / VT Scaler</h3>
-        <p class="text-gray-600 text-sm mb-4">
-          Quick calculator for CT/VT ratios and engineering unit scaling.
-          Handy for commissioning and sensor verification.
-        </p>
-        <div class="space-y-1">
-          <a href="https://github.com/Eltonsean69x/ct_vt_scaler/releases"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm font-medium">
-            Download (EXE)
-          </a><br>
-          <a href="https://github.com/Eltonsean69x/ct_vt_scaler"
-             target="_blank"
-             class="text-blue-600 hover:underline text-sm">
-            Source on GitHub
-          </a>
-        </div>
-      </div>
-
-      <h2>Virtual Energy Meter</h2>
+<!-- Virtual Energy Meter -->
+<h3>Virtual Energy Meter</h3>
 <p>
-  A simple virtual three-phase energy meter simulator that exposes Modbus TCP
-  registers and shows a live dashboard. Useful for testing PME drivers, Modbus
-  clients and SCADA integrations without real hardware.
+  A virtual three-phase energy meter simulator that exposes Modbus TCP
+  registers and shows a live dashboard. Useful for testing drivers and
+  integrations without real hardware.
 </p>
-
 <p>
   <a href="https://github.com/Eltonsean69x/virtual-energymeter/releases/latest/download/virtual_energymeter.exe">
-    👉 Download Virtual Energy Meter (.exe)
+    Download .exe
+  </a>
+  &nbsp;|&nbsp;
+  <a href="https://github.com/Eltonsean69x/virtual-energymeter">
+    View GitHub repo
   </a>
 </p>
-
 <p>
-  <img src="images/virtual_energymeter_gui.png"
-       alt="Virtual Energy Meter GUI screenshot"
-       style="max-width: 600px; border: 1px solid #ccc; border-radius: 4px;" />
+  <img
+    src="images/virtual_energymeter_gui.png"
+    alt="Virtual Energy Meter GUI"
+    style="max-width: 400px; border: 1px solid #ccc; border-radius: 4px;"
+  />
+</p>
+
+<!-- BMS Register Map Viewer -->
+<h3>BMS Register Map Viewer</h3>
+<p>
+  A simple CSV-based register map viewer with filters and search to help
+  browse and sanity-check BMS and Modbus register maps.
+</p>
+<p>
+  <!-- Update this link if/when you have an .exe release -->
+  <a href="https://github.com/Eltonsean69x/bms-register-map-viewer">
+    View GitHub repo
+  </a>
+</p>
+<p>
+  <img
+    src="images/bms_register_map_viewer.png"
+    alt="BMS Register Map Viewer GUI"
+    style="max-width: 400px; border: 1px solid #ccc; border-radius: 4px;"
+  />
+</p>
+
+<!-- CT/VT & PME Scaling Calculator -->
+<h3>CT/VT &amp; PME Scaling Calculator</h3>
+<p>
+  A desktop tool that helps calculate CT and VT ratios, understand PME
+  scaling chains, and generate configuration hints for CT/VT settings.
+</p>
+<p>
+  <!-- TODO: update .exe link once you publish a release for ct_vt_scaler -->
+  <a href="https://github.com/Eltonsean69x/ct_vt_scaler">
+    View GitHub repo
+  </a>
+</p>
+<p>
+  <img
+    src="images/ct_vt_scaler_.png"
+    alt="CT/VT & PME Scaling Calculator GUI"
+    style="max-width: 400px; border: 1px solid #ccc; border-radius: 4px;"
+  />
+</p>
+
+<!-- PME Driver Tester (planned) -->
+<h3>PME Driver Tester (planned)</h3>
+<p>
+  Planned tool: an independent Modbus TCP tester that reads device
+  registers, applies scaling, and compares values against PME, to quickly
+  diagnose driver and scaling issues.
+</p>
+<p>
+  <!-- Update links when the repo and .exe exist -->
+  <!-- <a href="https://github.com/Eltonsean69x/pme_driver_tester">View GitHub repo</a> -->
+</p>
+<p>
+  <img
+    src="images/pme_driver_tester.png"
+    alt="PME Driver Tester concept"
+    style="max-width: 400px; border: 1px solid #ccc; border-radius: 4px;"
+  />
+</p>
+
+<!-- PME Log Analyzer (planned) -->
+<h3>PME Log Analyzer (planned)</h3>
+<p>
+  Planned tool: a log analysis utility to parse PME logs, highlight
+  communication errors and driver issues, and summarise data quality.
+</p>
+<p>
+  <!-- Update links when the repo and .exe exist -->
+  <!-- <a href="https://github.com/Eltonsean69x/pme_log_analyzer">View GitHub repo</a> -->
+</p>
+<p>
+  <img
+    src="images/pme_log_analyzer.png"
+    alt="PME Log Analyzer concept"
+    style="max-width: 400px; border: 1px solid #ccc; border-radius: 4px;"
+  />
 </p>
 
 
     </div>
   </div>
 </section>
-
-      
     </div>
   </div>
 </section>
@@ -281,6 +267,7 @@
   </script>
 </body>
 </html>
+
 
 
 
