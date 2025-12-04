@@ -55,6 +55,26 @@
        border-bottom: none !important;
        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
 }
+
+      .modctrl-navbar .navbar-brand {
+  font-size: 1.4rem;         /* bigger brand text */
+  letter-spacing: 0.06em;    /* slightly spaced out */
+  text-transform: uppercase; /* gives it a “brand” feel */
+  color: #ffffff !important; /* ensure it's bright white */
+}
+
+/* small glowing dot after “Modctrl” for a subtle brand accent */
+.modctrl-navbar .navbar-brand::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.45rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--modctrl-accent);
+  box-shadow: 0 0 10px rgba(24, 224, 168, 0.9);
+  vertical-align: middle;
+}
       }
 
       .navbar-brand img {
@@ -527,4 +547,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
 
