@@ -21,9 +21,15 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
 
-    <!-- Space Grotesk font for a nicer, modern look -->
+    <!-- Space Grotesk for headings / hero text -->
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Orbitron for MODCTRL brand in header -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -44,83 +50,100 @@
 
       h1,
       h2,
-      h3,
-      .navbar-brand span {
+      h3 {
         font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
         letter-spacing: 0.01em;
       }
 
-      .modctrl-navbar {
-       border-bottom: none !important;
-       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
-}
-
-      .modctrl-navbar .navbar-brand {
-  font-size: 1.4rem;         /* bigger brand text */
-  letter-spacing: 0.06em;    /* slightly spaced out */
-  text-transform: uppercase; /* gives it a “brand” feel */
-  color: #ffffff !important; /* ensure it's bright white */
-}
-
-/* Brand text styling */
-.modctrl-brand {
-  color: #ffffff !important;
-}
-
-.modctrl-brand-text {
-  font-size: 1.75rem;          /* bigger, more logo-like */
-  font-weight: 600;
-  letter-spacing: 0.08em;      /* spaced out a little */
-  text-transform: uppercase;   /* LOGO VIBES */
-  text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
-}
-
-/* LED strip next to the brand */
-.modctrl-leds {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 0.6rem;
-  padding-left: 0.4rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Each LED */
-.modctrl-leds span {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: rgba(24, 224, 168, 0.25);
-  box-shadow: 0 0 0 rgba(24, 224, 168, 0);
-  opacity: 0.35;
-  animation: modctrl-led-pulse 1.4s infinite;
-}
-
-/* Staggered animation to look like data/traffic */
-.modctrl-leds span:nth-child(1) { animation-delay: 0s; }
-.modctrl-leds span:nth-child(2) { animation-delay: 0.12s; }
-.modctrl-leds span:nth-child(3) { animation-delay: 0.24s; }
-.modctrl-leds span:nth-child(4) { animation-delay: 0.36s; }
-.modctrl-leds span:nth-child(5) { animation-delay: 0.48s; }
-
-@keyframes modctrl-led-pulse {
-  0%, 80%, 100% {
-    opacity: 0.25;
-    box-shadow: 0 0 0 rgba(24, 224, 168, 0);
-    background-color: rgba(24, 224, 168, 0.2);
-  }
-  40% {
-    opacity: 1;
-    background-color: #18e0a8;
-    box-shadow: 0 0 10px rgba(24, 224, 168, 0.95);
-  }
-}
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.96) !important;
+        backdrop-filter: blur(12px);
       }
 
-      .navbar-brand img {
-        height: 32px;
-        margin-right: 0.55rem;
+      .modctrl-navbar {
+        border-bottom: none !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+      }
+
+      /* Brand container */
+      .modctrl-brand {
+        color: #ffffff !important;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* BRAND TEXT – Orbitron */
+      .modctrl-brand-text {
+        font-family: "Orbitron", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        font-size: 2rem;              /* big and bold */
+        font-weight: 700;
+        letter-spacing: 0.12em;       /* spaced out for logo feel */
+        text-transform: uppercase;
+        color: #ffffff;
+        text-shadow: 0 0 16px rgba(0, 0, 0, 0.9);
+      }
+
+      /* LED strip next to the brand */
+      .modctrl-leds {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: 0.7rem;
+        padding-left: 0.5rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      /* Base LED style */
+      .modctrl-leds span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        opacity: 0.25;
+        background-color: currentColor;
+        box-shadow: 0 0 0 currentColor;
+        animation: modctrl-led-pulse 1.4s infinite;
+      }
+
+      /* Each LED color: red -> amber -> yellow -> light green -> green */
+      .modctrl-leds span:nth-child(1) {
+        color: #ff4b5c;   /* red */
+      }
+
+      .modctrl-leds span:nth-child(2) {
+        color: #ff9800;   /* amber/orange */
+      }
+
+      .modctrl-leds span:nth-child(3) {
+        color: #ffeb3b;   /* yellow */
+      }
+
+      .modctrl-leds span:nth-child(4) {
+        color: #8be78b;   /* soft green */
+      }
+
+      .modctrl-leds span:nth-child(5) {
+        color: #18e0a8;   /* strong Modctrl green */
+      }
+
+      /* Stagger the timing so it looks like traffic/connection activity */
+      .modctrl-leds span:nth-child(1) { animation-delay: 0s; }
+      .modctrl-leds span:nth-child(2) { animation-delay: 0.12s; }
+      .modctrl-leds span:nth-child(3) { animation-delay: 0.24s; }
+      .modctrl-leds span:nth-child(4) { animation-delay: 0.36s; }
+      .modctrl-leds span:nth-child(5) { animation-delay: 0.48s; }
+
+      /* Pulse animation using the LED's own color (currentColor) */
+      @keyframes modctrl-led-pulse {
+        0%, 80%, 100% {
+          opacity: 0.25;
+          box-shadow: 0 0 0 currentColor;
+        }
+        40% {
+          opacity: 1;
+          box-shadow: 0 0 12px currentColor;
+        }
       }
 
       .hero {
@@ -268,46 +291,45 @@
   </head>
   <body>
     <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark modctrl-navbar">
-  <div class="container">
-    <a class="navbar-brand fw-semibold modctrl-brand" href="#top">
-  <span class="modctrl-brand-text">Modctrl</span>
-  <span class="modctrl-leds">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mainNav"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-dark modctrl-navbar">
+      <div class="container">
+        <a class="navbar-brand fw-semibold modctrl-brand" href="#top">
+          <span class="modctrl-brand-text">Modctrl</span>
+          <span class="modctrl-leds">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#top">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#what-we-do">What we do</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#downloads">Downloads</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#top">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#what-we-do">What we do</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#downloads">Downloads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- MAIN CONTENT -->
     <main id="top">
@@ -350,7 +372,7 @@
             <div class="col-lg-5">
               <div class="hero-image-wrapper">
                 <div class="hero-image-frame">
-                  <!-- Swap this for panel-concept.png / panel-overlay.png if you prefer -->
+                  <!-- You can swap this for panel-concept.png / prototype-panel.webp etc. -->
                   <img
                     src="dashboard-mockup.png"
                     alt="Modctrl virtual device dashboard mockup"
@@ -358,7 +380,7 @@
                 </div>
                 <div class="hero-image-tag">
                   <span class="hero-image-tag-dot"></span>
-                  <span>Live Modbus & alarms · No hardware</span>
+                  <span>Virtual UPS, meters & test panels</span>
                 </div>
               </div>
             </div>
@@ -450,7 +472,7 @@
                     <li>SNMP trap sending for key UPS events</li>
                     <li>Perfect for graphics, alarm routing & trend tests</li>
                   </ul>
-                  <!-- You said this is built as an EXE but not released yet -->
+                  <!-- Built as EXE but not released yet: use request-by-email -->
                   <a
                     href="mailto:Sean@modctrl.ie?subject=Virtual%20UPS%20Simulator%20request"
                     class="btn btn-outline-light pill-btn mb-2"
@@ -479,7 +501,6 @@
                     <li>Profiles for office, industrial and random load cases</li>
                     <li>Noise toggle and one-second updates</li>
                   </ul>
-                  <!-- Replace this with your actual EXE / release if you have one -->
                   <a
                     href="https://github.com/Eltonsean69x/virtual-energymeter"
                     class="btn btn-primary pill-btn mb-2"
@@ -537,7 +558,7 @@
             <div class="col-lg-6">
               <h2 class="h3 mb-2">Contact</h2>
               <p class="text-muted mb-4">
-                Based in Donegal and working on projects across data centers,
+                Based in Ireland/Sweden and working on projects across data centers,
                 industrial sites and building services. Reach out if you need a
                 custom virtual device, a test concept or help with a Modbus
                 integration.
@@ -557,7 +578,7 @@
                 <div class="card-body">
                   <h5 class="card-title mb-3">Typical enquiries</h5>
                   <ul class="text-muted small mb-0">
-                    <li>Testing EBO / SCADA before UPS or meters are delivered</li>
+                    <li>Testing PME / EBO / SCADA before Power Meters or UPS Systems are delivered</li>
                     <li>Virtual device or Modbus simulator for a specific site</li>
                     <li>Help wiring Modbus and mapping registers for FAT</li>
                     <li>Feature requests or feedback on Modctrl tools</li>
@@ -595,6 +616,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
-
-
