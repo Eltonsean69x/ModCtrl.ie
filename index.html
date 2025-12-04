@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Modctrl – Modbus & Virtual Device Tools</title>
+    <title>ModCtrl – Modbus & Testing Tools</title>
     <meta
       name="description"
-      content="Modctrl builds Modbus and virtual device tools for data center, BMS, and industrial engineers – from virtual UPS and meters to compact diagnostic panels."
+      content="ModCtrl builds Modbus and testing tools for PME, SCADA, BMS and industrial engineers – virtual devices, diagnostics and utilities for commissioning."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -27,7 +27,7 @@
       rel="stylesheet"
     />
 
-    <!-- Orbitron for MODCTRL brand in header -->
+    <!-- Orbitron for ModCtrl brand in header -->
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap"
       rel="stylesheet"
@@ -73,14 +73,14 @@
         align-items: center;
       }
 
-      /* BRAND TEXT – Orbitron */
+      /* BRAND TEXT – Orbitron, only M & C uppercase via text itself */
       .modctrl-brand-text {
         font-family: "Orbitron", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
-        font-size: 2rem;              /* big and bold */
+        font-size: 2rem;
         font-weight: 700;
-        letter-spacing: 0.12em;       /* spaced out for logo feel */
-        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        text-transform: none;        /* keep ModCtrl exactly as typed */
         color: #ffffff;
         text-shadow: 0 0 16px rgba(0, 0, 0, 0.9);
       }
@@ -107,34 +107,19 @@
       }
 
       /* Each LED color: red -> amber -> yellow -> light green -> green */
-      .modctrl-leds span:nth-child(1) {
-        color: #ff4b5c;   /* red */
-      }
+      .modctrl-leds span:nth-child(1) { color: #ff4b5c; }
+      .modctrl-leds span:nth-child(2) { color: #ff9800; }
+      .modctrl-leds span:nth-child(3) { color: #ffeb3b; }
+      .modctrl-leds span:nth-child(4) { color: #8be78b; }
+      .modctrl-leds span:nth-child(5) { color: #18e0a8; }
 
-      .modctrl-leds span:nth-child(2) {
-        color: #ff9800;   /* amber/orange */
-      }
-
-      .modctrl-leds span:nth-child(3) {
-        color: #ffeb3b;   /* yellow */
-      }
-
-      .modctrl-leds span:nth-child(4) {
-        color: #8be78b;   /* soft green */
-      }
-
-      .modctrl-leds span:nth-child(5) {
-        color: #18e0a8;   /* strong Modctrl green */
-      }
-
-      /* Stagger the timing so it looks like traffic/connection activity */
+      /* Stagger timing so it looks like comms activity */
       .modctrl-leds span:nth-child(1) { animation-delay: 0s; }
       .modctrl-leds span:nth-child(2) { animation-delay: 0.12s; }
       .modctrl-leds span:nth-child(3) { animation-delay: 0.24s; }
       .modctrl-leds span:nth-child(4) { animation-delay: 0.36s; }
       .modctrl-leds span:nth-child(5) { animation-delay: 0.48s; }
 
-      /* Pulse animation using the LED's own color (currentColor) */
       @keyframes modctrl-led-pulse {
         0%, 80%, 100% {
           opacity: 0.25;
@@ -146,8 +131,37 @@
         }
       }
 
+      /* HERO SECTION */
       .hero {
+        position: relative;
         padding: 4rem 0 3rem;
+        background-image: url("hero-bg.png"); /* <- put your neon background file here */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle at top left,
+            rgba(24, 224, 168, 0.15),
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(0, 123, 255, 0.15),
+            transparent 55%
+          ),
+          rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(2px);
+      }
+
+      .hero > .container {
+        position: relative;
       }
 
       @media (min-width: 992px) {
@@ -157,7 +171,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2.5rem, 4vw, 3.1rem);
+        font-size: clamp(2.6rem, 4vw, 3.3rem);
         font-weight: 600;
       }
 
@@ -222,11 +236,7 @@
       }
 
       .btn-primary {
-        background: linear-gradient(
-          135deg,
-          var(--modctrl-accent),
-          #00b3ff
-        );
+        background: linear-gradient(135deg, var(--modctrl-accent), #00b3ff);
         border: none;
       }
 
@@ -242,51 +252,6 @@
       .footer-social a:hover {
         opacity: 1;
       }
-
-      /* Hero image styling */
-      .hero-image-wrapper {
-        position: relative;
-      }
-
-      .hero-image-frame {
-        border-radius: 1.2rem;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
-        background: radial-gradient(
-          circle at top,
-          rgba(24, 224, 168, 0.16),
-          transparent 55%
-        );
-      }
-
-      .hero-image-frame img {
-        width: 100%;
-        display: block;
-      }
-
-      .hero-image-tag {
-        position: absolute;
-        bottom: -12px;
-        right: 10%;
-        padding: 0.35rem 0.8rem;
-        border-radius: 999px;
-        background-color: rgba(6, 9, 18, 0.96);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        font-size: 0.75rem;
-        color: #adb5bd;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-      }
-
-      .hero-image-tag-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: var(--modctrl-accent);
-        box-shadow: 0 0 8px rgba(24, 224, 168, 0.9);
-      }
     </style>
   </head>
   <body>
@@ -294,7 +259,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark modctrl-navbar">
       <div class="container">
         <a class="navbar-brand fw-semibold modctrl-brand" href="#top">
-          <span class="modctrl-brand-text">Modctrl</span>
+          <span class="modctrl-brand-text">ModCtrl</span>
           <span class="modctrl-leds">
             <span></span>
             <span></span>
@@ -337,20 +302,19 @@
       <section class="hero">
         <div class="container">
           <div class="row align-items-center gy-4">
-            <div class="col-lg-7">
+            <div class="col-lg-8 col-xl-7">
               <div class="mb-3">
                 <span class="badge-soft text-uppercase text-muted">
                   <span>Small tools, smart tools</span>
                 </span>
               </div>
               <h1 class="hero-title mb-3">
-                Virtual UPS and meters for real-world commissioning.
+                Testing tools for data, comms and commissioning.
               </h1>
               <p class="hero-subtitle text-muted mb-4">
-                Modctrl builds small, focused tools for data center, BMS and
-                industrial engineers – virtual UPS and energy meters you can
-                plug into EBO, SCADA and PLC systems before any hardware lands
-                on site.
+                Simple, focused tools for Modbus, PME, SCADA and industrial
+                engineers. Simulate devices, generate data, test integrations
+                and train teams — before hardware arrives on site.
               </p>
               <div class="d-flex flex-wrap gap-3">
                 <a
@@ -367,23 +331,6 @@
                 </a>
               </div>
             </div>
-
-            <!-- HERO IMAGE -->
-            <div class="col-lg-5">
-              <div class="hero-image-wrapper">
-                <div class="hero-image-frame">
-                  <!-- You can swap this for panel-concept.png / prototype-panel.webp etc. -->
-                  <img
-                    src="dashboard-mockup.png"
-                    alt="Modctrl virtual device dashboard mockup"
-                  />
-                </div>
-                <div class="hero-image-tag">
-                  <span class="hero-image-tag-dot"></span>
-                  <span>Virtual UPS, meters & test panels</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -394,8 +341,8 @@
           <div class="mb-4">
             <h2 class="h3 mb-2">What we do</h2>
             <p class="text-muted mb-0">
-              Virtual devices and test tools that make FAT prep, graphics
-              testing and integrations less painful.
+              Testing tools, virtual devices and utilities that make FAT prep,
+              graphics testing and integrations less painful.
             </p>
           </div>
 
@@ -405,9 +352,9 @@
                 <div class="card-body">
                   <h5 class="card-title mb-2">Virtual devices</h5>
                   <p class="card-text text-muted mb-0">
-                    Virtual UPS and energy meters that behave like real field
-                    hardware – so you can build graphics, alarms, logic and
-                    trends long before anything ships to site.
+                    Virtual meters and other simulated devices that behave like
+                    real field hardware – so you can build graphics, alarms,
+                    logic and trends long before anything ships to site.
                   </p>
                 </div>
               </div>
@@ -418,9 +365,9 @@
                 <div class="card-body">
                   <h5 class="card-title mb-2">Modbus & protocol tools</h5>
                   <p class="card-text text-muted mb-0">
-                    Modbus TCP servers, register maps and helper utilities for
-                    EBO, SCADA, PLC and PME engineers needing predictable,
-                    repeatable test sources during commissioning.
+                    Modbus TCP servers, register maps and diagnostics for PME,
+                    SCADA, BMS and PLC engineers needing predictable, repeatable
+                    test sources during commissioning.
                   </p>
                 </div>
               </div>
@@ -429,11 +376,11 @@
             <div class="col-md-4">
               <div class="card h-100 shadow-sm">
                 <div class="card-body">
-                  <h5 class="card-title mb-2">Panels & prototypes</h5>
+                  <h5 class="card-title mb-2">Panels & utilities</h5>
                   <p class="card-text text-muted mb-0">
-                    Compact modular test panels and prototype tools to support
-                    commissioning teams on critical facilities and integration
-                    projects.
+                    Compact modular test panels and site-focused utilities to
+                    support commissioning teams on critical facilities and
+                    integration projects.
                   </p>
                 </div>
               </div>
@@ -450,7 +397,7 @@
               <h2 class="h3 mb-2">Downloads</h2>
               <p class="text-muted mb-0">
                 Windows executables are hosted on GitHub or shared on request.
-                Update the links below as you publish new releases.
+                Update the links below as you publish new releases and tools.
               </p>
             </div>
           </div>
@@ -462,25 +409,23 @@
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title mb-1">Virtual UPS Simulator</h5>
                   <p class="text-muted small mb-3">
-                    A software UPS that exposes live voltage, load, battery and
-                    runtime, manual alarms, Modbus TCP and SNMP traps – ideal
-                    for EBO/FAT testing when the real UPS isn’t on site yet.
+                    A software UPS for EBO and BMS engineers: live voltage,
+                    load, battery and runtime values, manual alarms, Modbus TCP
+                    and SNMP traps – ideal for testing graphics, alarms and
+                    comms before the real UPS is on site.
                   </p>
                   <ul class="text-muted small mb-3">
                     <li>Overview & alarms tabs fully usable for FAT</li>
                     <li>Modbus TCP server with live simulated values</li>
                     <li>SNMP trap sending for key UPS events</li>
-                    <li>Perfect for graphics, alarm routing & trend tests</li>
+                    <li>Perfect for routing, trends & loss-of-comms tests</li>
                   </ul>
-                  <!-- Built as EXE but not released yet: use request-by-email -->
                   <a
                     href="mailto:Sean@modctrl.ie?subject=Virtual%20UPS%20Simulator%20request"
                     class="btn btn-outline-light pill-btn mb-2"
                   >
                     Request Virtual UPS build
                   </a>
-                  <!-- Optional future GitHub link -->
-                  <!-- <a href="#" class="btn btn-outline-light btn-sm pill-btn">View project on GitHub</a> -->
                 </div>
               </div>
             </div>
@@ -492,7 +437,7 @@
                   <h5 class="card-title mb-1">Virtual Energy Meter</h5>
                   <p class="text-muted small mb-3">
                     A virtual 3-phase energy meter with Modbus TCP and a live
-                    dashboard – built for SCADA, PLC and PME engineers who need
+                    dashboard – built for PME, SCADA and PLC engineers who need
                     believable power data on demand.
                   </p>
                   <ul class="text-muted small mb-3">
@@ -558,10 +503,10 @@
             <div class="col-lg-6">
               <h2 class="h3 mb-2">Contact</h2>
               <p class="text-muted mb-4">
-                Based in Ireland/Sweden and working on projects across data centers,
+                Based in Donegal and working on projects across data centers,
                 industrial sites and building services. Reach out if you need a
-                custom virtual device, a test concept or help with a Modbus
-                integration.
+                custom virtual device, a test concept or help with a Modbus or
+                PME integration.
               </p>
               <div class="card shadow-sm">
                 <div class="card-body">
@@ -578,10 +523,10 @@
                 <div class="card-body">
                   <h5 class="card-title mb-3">Typical enquiries</h5>
                   <ul class="text-muted small mb-0">
-                    <li>Testing PME / EBO / SCADA before Power Meters or UPS Systems are delivered</li>
+                    <li>Testing PME / SCADA before meters or UPS are delivered</li>
                     <li>Virtual device or Modbus simulator for a specific site</li>
                     <li>Help wiring Modbus and mapping registers for FAT</li>
-                    <li>Feature requests or feedback on Modctrl tools</li>
+                    <li>Feature requests or feedback on ModCtrl tools</li>
                   </ul>
                 </div>
               </div>
@@ -597,7 +542,7 @@
         class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
       >
         <div class="text-muted small">
-          &copy; 2025 Modctrl. All rights reserved.
+          &copy; 2025 ModCtrl. All rights reserved.
         </div>
         <div class="footer-social d-flex align-items-center gap-3 small">
           <a
