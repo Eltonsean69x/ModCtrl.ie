@@ -51,9 +51,10 @@
         letter-spacing: 0.01em;
       }
 
-      .navbar {
-        background-color: rgba(0, 0, 0, 0.96) !important;
-        backdrop-filter: blur(12px);
+      .modctrl-navbar {
+       border-bottom: none !important;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+}
       }
 
       .navbar-brand img {
@@ -206,40 +207,39 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark border-bottom">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#top">
-          <!-- Uses logo.png from repo root -->
-          <img src="logo.png" alt="Modctrl logo" />
-          <span class="fw-semibold">Modctrl</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-dark modctrl-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="#top">
+      Modctrl
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#top">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#what-we-do">What we do</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#downloads">Downloads</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#top">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#what-we-do">What we do</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#downloads">Downloads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
     <!-- MAIN CONTENT -->
     <main id="top">
@@ -527,3 +527,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
