@@ -1,172 +1,368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ModCtrl.ie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body style="font-family: 'Inter', sans-serif;" class="bg-white text-gray-800">
+  <head>
+    <meta charset="utf-8" />
+    <title>Modctrl – Modbus & Protocol Tools</title>
+    <meta
+      name="description"
+      content="Modctrl builds Modbus and protocol tools for data center, BMS, and industrial engineers – from portable test apps to modular diagnostic panels."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- Hero Section -->
-<header class="text-center py-12 shadow-md" data-aos="fade-down">
-  <img src="logo.png" alt="ModCtrl Logo" class="mx-auto mb-4" style="width: 750px; height: auto;">
-  <h1 class="text-2xl font-bold mb-2">Small Panels, Smart Systems</h1>
-  <p class="text-gray-600 max-w-xl mx-auto">Independent control panel specialists based in Donegal, delivering modular systems that simplify monitoring, energy control, and protocol integration.</p>
-</header>
+    <!-- Darkly theme (Bootswatch / Bootstrap 5) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@5/dist/darkly/bootstrap.min.css"
+    />
 
-  <!-- About Us -->
-  <section class="px-6 py-12 max-w-4xl mx-auto" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-4">About Us</h2>
-    <p class="text-gray-700 leading-relaxed text-lg">
-      ModCtrl.ie is an independent control panel consultancy based in Donegal. We design and support compact modular control systems for schools, offices, and energy-focused projects. Our services revolve around Modbus and BACnet integration, hardware consultancy, and practical support during the pre-commissioning phase. Our mission is to deliver sleek, efficient panels that just work — no fluff, no fuss.
-    </p>
-  </section>
+    <!-- Custom minimalist tweaks -->
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
 
-  <section class="bg-white py-16 px-6 border-y border-gray-200 shadow-sm" data-aos="fade-up">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6 text-gray-800 tracking-tight">Why Modular?</h2>
-    <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-      Modular energy panels are easier to install, scale, and maintain — especially in environments like schools and small facilities.
-      Whether you're adding meters, sensors, or new logic, our modular approach ensures every upgrade is quick, tidy, and cost-efficient.
-    </p>
-    <div class="mt-8 inline-block bg-gray-100 text-gray-700 text-sm px-4 py-2 rounded shadow-inner tracking-wide">
-      Smart design. Scalable systems. Simpler futures.
-    </div>
-  </div>
-</section>
-  
-<section class="py-12 px-6 max-w-6xl mx-auto text-center" data-aos="fade-up">
-  <div class="flex flex-wrap justify-center gap-6">
-    <img src="prototype-panel.webp" alt="Sketch" class="w-72 shadow-lg rounded">
-    <img src="panel-concept.png" alt="Concept" class="w-72 shadow-lg rounded">
-    <img src="dashboard-mockup.png" alt="Dashboard" class="w-72 shadow-lg rounded">
-  </div>
-    <p class="mt-6 text-gray-600 italic">
-    Designed for practicality. Built for clarity. Scaled for your future.
-  </p>
-</section>
+      .navbar-brand img {
+        height: 34px;
+        margin-right: 0.5rem;
+      }
 
-<!-- Services -->
-<section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-10">Services</h2>
-    <div class="grid md:grid-cols-4 gap-8 text-left">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Hardware Consulting</h3>
-        <p class="text-gray-600">Get help choosing the right components, panel layouts, and power supplies for your application.</p>
+      .hero {
+        padding: 4rem 0 3rem;
+      }
+
+      @media (min-width: 992px) {
+        .hero {
+          padding: 5rem 0 4rem;
+        }
+      }
+
+      .hero-title {
+        font-size: clamp(2.4rem, 4vw, 3rem);
+        font-weight: 600;
+      }
+
+      .hero-subtitle {
+        max-width: 640px;
+      }
+
+      .pill-btn {
+        border-radius: 999px;
+      }
+
+      .card {
+        border-radius: 1rem;
+      }
+
+      section + section {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .badge-soft {
+        border-radius: 999px;
+        padding: 0.35rem 0.8rem;
+        background: rgba(255, 255, 255, 0.06);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .section-anchor {
+        scroll-margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#top">
+          <!-- Uses logo.png from repo root -->
+          <img src="logo.png" alt="Modctrl logo" />
+          <span class="fw-semibold">Modctrl</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#top">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#what-we-do">What we do</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#downloads">Downloads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Modbus & Gateway Support</h3>
-        <p class="text-gray-600">From Modbus RTU to TCP/IP, we support protocol conversion and clean integration setups.</p>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-7">
+              <div class="mb-3">
+                <span class="badge-soft text-uppercase text-muted">
+                  Small panels · Smart tools
+                </span>
+              </div>
+              <h1 class="hero-title mb-3">
+                Test, simulate, and debug Modbus in seconds.
+              </h1>
+              <p class="hero-subtitle text-muted mb-4">
+                Independent control specialists based in Donegal, building
+                Modbus and protocol tools for data center, BMS, and industrial
+                engineers – from lightweight test apps to compact diagnostic
+                panels.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a
+                  href="#downloads"
+                  class="btn btn-primary btn-lg pill-btn px-4"
+                >
+                  Download tools
+                </a>
+                <a
+                  href="#what-we-do"
+                  class="btn btn-outline-light btn-lg pill-btn px-4"
+                >
+                  What we do
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="card bg-dark border-secondary shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">Modctrl at a glance</h5>
+                  <p class="text-muted mb-2">
+                    Small, focused tools for the engineers actually standing in
+                    front of the panel – not just sitting at the BMS front end.
+                  </p>
+                  <ul class="text-muted small mb-0">
+                    <li>Modbus RTU / TCP testing & simulation</li>
+                    <li>Compact modular test panels</li>
+                    <li>Built for commissioning & troubleshooting</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT WE DO -->
+      <section id="what-we-do" class="py-5 section-anchor">
+        <div class="container">
+          <div class="mb-4">
+            <h2 class="h3 mb-2">What we do</h2>
+            <p class="text-muted mb-0">
+              Modctrl focuses on tools that make protocol work less painful and
+              commissioning faster.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">Modbus & protocol tools</h5>
+                  <p class="card-text text-muted mb-0">
+                    Desktop and embedded utilities for Modbus RTU / TCP:
+                    register scanning, device simulation, and quick field
+                    checks, designed to stay out of your way.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">Modular test panels</h5>
+                  <p class="card-text text-muted mb-0">
+                    Compact, purpose-built panels for live I/O simulation,
+                    gateway testing, and troubleshooting – small enough for a
+                    laptop bag, tough enough for site.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">Data center & BMS support</h5>
+                  <p class="card-text text-muted mb-0">
+                    Tools tuned for mechanical, electrical, controls, and BMS
+                    engineers working on critical facilities and complex
+                    integrations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOADS -->
+      <section id="downloads" class="py-5 section-anchor">
+        <div class="container">
+          <div class="mb-4 d-flex justify-content-between align-items-end">
+            <div>
+              <h2 class="h3 mb-2">Downloads</h2>
+              <p class="text-muted mb-0">
+                Latest builds and toolkits from Modctrl. Replace the links below
+                with your real files, GitHub releases, or installers.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Tool 1 -->
+            <div class="col-md-6">
+              <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title mb-1">Modctrl Modbus Studio</h5>
+                  <p class="text-muted small mb-3">
+                    Desktop Modbus RTU/TCP tester for reading & writing
+                    registers, simulating devices, and quick site diagnostics.
+                  </p>
+                  <ul class="text-muted small mb-3">
+                    <li>Windows 10/11</li>
+                    <li>Serial (USB/RS-485) + TCP</li>
+                    <li>Client & simple server modes</li>
+                  </ul>
+                  <!-- TODO: put your real link here -->
+                  <a href="#" class="btn btn-primary pill-btn mb-2">
+                    Download for Windows
+                  </a>
+                  <a href="#" class="btn btn-outline-light btn-sm pill-btn">
+                    Release notes / GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tool 2 -->
+            <div class="col-md-6">
+              <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title mb-1">Modctrl Panel Toolkit</h5>
+                  <p class="text-muted small mb-3">
+                    Config files, register maps, and wiring notes for Modctrl
+                    modular test and diagnostic panels.
+                  </p>
+                  <ul class="text-muted small mb-3">
+                    <li>PDF wiring guides</li>
+                    <li>Sample Modbus maps</li>
+                    <li>Config templates & checklists</li>
+                  </ul>
+                  <!-- TODO: put your real link here -->
+                  <a href="#" class="btn btn-outline-light pill-btn mb-2">
+                    Download toolkit (.zip)
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tool 3: Python utilities -->
+            <div class="col-12">
+              <div class="card bg-dark border-secondary shadow-sm">
+                <div class="card-body d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+                  <div class="mb-3 mb-md-0">
+                    <h5 class="card-title mb-1">Python utilities</h5>
+                    <p class="text-muted small mb-0">
+                      Open-source command-line helpers for quick Modbus
+                      register reads, simple simulations, and scripting
+                      workflows.
+                    </p>
+                  </div>
+                  <!-- TODO: link to your GitHub repo or zip -->
+                  <a href="#" class="btn btn-outline-light pill-btn">
+                    View on GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-5 section-anchor">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-6">
+              <h2 class="h3 mb-2">Contact</h2>
+              <p class="text-muted mb-4">
+                Based in Donegal and working with projects across data centers,
+                industrial sites, and building services. Get in touch if you
+                need a custom test tool, a panel concept, or help with a Modbus
+                integration.
+              </p>
+              <div class="card bg-dark border-secondary shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title mb-3">Email</h5>
+                  <!-- Swap this for your real email -->
+                  <p class="mb-0">
+                    <a href="mailto:info@modctrl.ie">info@modctrl.ie</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card bg-dark border-secondary shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title mb-3">Typical enquiries</h5>
+                  <ul class="text-muted small mb-0">
+                    <li>Modbus RTU/TCP test tool for a specific project</li>
+                    <li>Custom modular test panel concept or layout</li>
+                    <li>Support or feature request for a Modctrl tool</li>
+                    <li>
+                      Help diagnosing a tricky integration between BMS, PLC, and
+                      field devices
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-3">
+      <div class="container text-center text-muted small">
+        &copy; 2025 Modctrl. All rights reserved.
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Pre-Commissioning Advice</h3>
-        <p class="text-gray-600">Get ahead of site visits by testing your panels and logic in controlled environments.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Custom Dashboards</h3>
-        <p class="text-gray-600">Custom monitoring dashboards tailored to your needs — from energy to occupancy.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-  <!-- Features -->
-  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-2xl font-semibold mb-4">What Makes Us Different</h2>
-    <ul class="list-none space-y-2 text-gray-700">
-    <li>🧰 No corporate fluff — just real technical support</li>
-    <li>⚙️ Modular builds to reduce cost and increase flexibility</li>
-    <li>🛰️ Remote-first support when you need it most</li>
-    <li>🌐 Donegal-based, Europe-wide delivery</li>
-    </ul>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="bg-gray-50 py-12 px-6" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold text-center mb-6">Testimonials</h2>
-    <div class="max-w-3xl mx-auto text-center space-y-6">
-      <blockquote class="italic text-gray-600">"ModCtrl helped us simplify our entire monitoring setup. Sean's support was quick and honest — just what we needed."</blockquote>
-      <blockquote class="italic text-gray-600">"The Modbus gateway config they recommended saved us days of setup. Highly recommended for lean teams."</blockquote>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-    <div class="space-y-4">
-      <details class="bg-gray-100 p-4 rounded shadow-sm">
-        <summary class="cursor-pointer font-semibold">Do you build panels or just consult?</summary>
-        <p class="mt-2 text-gray-700">We do both — depending on project size and timeline. Our specialty is smart, compact builds.</p>
-      </details>
-      <details class="bg-gray-100 p-4 rounded shadow-sm">
-        <summary class="cursor-pointer font-semibold">Can you help with Modbus testing?</summary>
-        <p class="mt-2 text-gray-700">Yes. We can simulate, configure, and test Modbus or BACnet communication for your setup.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-600 py-10 border-t mt-12 max-w-4xl mx-auto">
-    <div class="flex justify-center items-center space-x-8 mb-4">
-      <!-- LinkedIn Button -->
-      <a href="https://www.linkedin.com/company/modctrl" target="_blank" aria-label="LinkedIn" class="inline-flex items-center justify-center bg-black text-white rounded-full w-10 h-10 hover:bg-gray-800 transition" title="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.8-.81-1.8-1.8 0-1 .81-1.8 1.8-1.8s1.8.81 1.8 1.8c0 1-.81 1.8-1.8 1.8zm13.5 11.3h-3v-5.5c0-1.3-1-1.5-1-1.5-.6 0-1 .4-1 1.5v5.5h-3v-10h3v1.5c.4-.6 1.3-1.5 2.5-1.5 2 0 3 1.4 3 4.5v5.5z"/>
-        </svg>
-      </a>
-
-      <a href="https://twitter.com/ModCtrlDOTie" target="_blank" class="text-gray-600 hover:text-black mx-2" aria-label="X">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
-    <path d="M21.5 2.5h-3.7l-4.2 5.3-5.1-5.3H2.5l7.7 8.1L2.3 21.5h3.7l4.5-5.7 5.5 5.7h6l-8.4-8.9 7.9-10.1z"/>
-  </svg>
-</a>
-
-
-      <!-- Email -->
-      <div class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-gray-700" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 4h16v16H4z"/>
-          <polyline points="22,6 12,13 2,6"/>
-        </svg>
-        <a href="mailto:sean@modctrl.ie" class="hover:underline">sean@modctrl.ie</a>
-      </div>
-
-      <!-- Mobile -->
-      <div class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-gray-700" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="6" y="2" width="12" height="20" rx="2" ry="2"/>
-          <line x1="12" y1="18" x2="12" y2="18"/>
-        </svg>
-        <span>+353 85 1366 042</span>
-      </div>
-    </div>
-
-    <a href="#" class="block mt-4 text-xs text-gray-400 select-none">© 2025 ModCtrl.ie</a>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
